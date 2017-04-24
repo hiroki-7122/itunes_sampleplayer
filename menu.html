@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Virtual Music Preview</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="./js/three.min.js"></script>
+    <script src="./js/three.js"></script>
+    <script src="./js/runding.js"></script>
+    <script type="text/javascript">
+    </script>
+
+    <style>
+    canvas{
+      position: absolute;
+       z-index: 1;
+    }
+    form{
+      position: absolute;
+      z-index: 2;
+    }
+    input{
+      text-align: center;
+    }
+    .block{
+      text-align: center;
+      margin: 0 auto;
+    }
+    .memoarea{
+      text-align: center;
+      margin: 0 auto;
+      position: absolute;
+      z-index: 2;
+      margin-top: 55px;
+    }
+    #displayArea{
+      margin: 0 auto;
+    }
+    .itunes-embed-title{
+      font-size: 50px;
+      opacity: 0.9;
+    }
+    .itunes-embed-title a:link{
+    }
+    .itunes-embed-title a:hover{
+      text-decoration: none;
+      color: red;
+    }
+    .itunes-embed-artist{
+      font-size: 15px;
+      opacity: 0.5
+    }
+    .itunes-embed-preview audio{
+      opacity: 0.5;
+      position: fixed;
+      bottom: 0;
+        width: 100%;
+        left: 0;
+    }
+    </style>
+  </head>
+    <body onload="getInfo()">
+      <form class="block" action="javascript:getSelect(),clearSong(),canvas();">
+        <label for="searchword">Search Keyword</label>
+        <input type="text" id="search">
+        <select id="maxNum">
+        <option value="10" >10Preview</option>
+        <option value="20">20Preview</option>
+        <option value="30">30Preview</option>
+        </select>
+        <p><input id="submit" type="submit" value="Search"></p>
+      </form>
+
+      <div class="memoarea">
+      <div class="itunes-embed">
+            </div>
+        <div id="error">
+        </div>
+        <div id="displayArea">
+        </div>
+      </div>
+            <script src="./js/itunes.js"></script>
+
+  </body>
+</html>
